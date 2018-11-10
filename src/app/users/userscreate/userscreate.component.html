@@ -1,0 +1,55 @@
+<div  [hidden]="submitted" style="...">
+
+  <form (ngSubmit)="onSubmit()" >
+    <div class="form-group">
+      <label for="id">User Id</label>
+      <input type="text"   class="form-control"  id="id"   required [(ngModel)]="users.id" name="id">
+
+    </div>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text"  class="form-control"  id="name"  required [(ngModel)]="users.name" name="name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email"  class="form-control"  id="email" required [(ngModel)]="users.email"  name="email">
+    </div>
+
+    <div class="form-group">
+      <label for ="address.street"  >Address street</label>
+      <input  type="text"  class="form-control" id="address.street"  required [(ngModel)]="users.address.street"  name="address.street">
+    </div>
+
+    <div class="form-group">
+      <label for ="suite"  >Address suite</label>
+      <input type="text"   class="form-control" id="suite" required [(ngModel)]="users.address.suite"  name="suite">
+    </div>
+    <div class="form-group">
+      <label for ="city"  >Address city</label>
+      <input type="text"   class="form-control" id="city" required [(ngModel)]="users.address.city"  name="city">
+    </div>
+    <div class="form-group">
+      <label for ="zipcode"  >Address zipcode</label>
+      <input type="text"   class="form-control" id="zipcode" required [(ngModel)]="users.address.zipcode"  name="zipcode">
+    </div>
+
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="tel"   class="form-control" id="phone" required [(ngModel)]="users.phone"  name="phone">
+
+    </div>
+    <div class="form-group">
+      <label for="website">Website</label>
+      <input type="url"  class="form-control" id="website" required [(ngModel)]="users.website"  name="website">
+
+    </div>
+
+    <button class="btn btn-success" type="submit">Submit</button>
+  </form>
+
+</div>
+<div [hidden]="!submitted">
+<h1>successful</h1>
+<button class="btn btn-success" (click)="newUser()">Add User Again</button>
+</div>

@@ -1,0 +1,96 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+     margin: 0;
+     background: #F2F2F2;
+     font-family: 'Montserrat', sans-serif;
+     height: 100vh;
+}
+#container {
+  display: grid;
+  grid-template-columns: 70px auto;
+  height: 100%;
+
+  #content {
+    padding: 30px 50px;
+
+    h1 {
+      color: cornflowerblue;
+      font-weight: bolder;
+      font-style: normal;
+
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+
+  /*    .btn
+      {
+        background:    #9900ff;
+        background:    -webkit-linear-gradient(#9900ff, #9900ff 50%, #6aa84f 50%, #6aa84f);
+        background:    linear-gradient(#9900ff, #9900ff 50%, #6aa84f 50%, #6aa84f);
+        border:        1px solid #556699;
+        border-radius: 1000px;
+        box-shadow:    0 1px #444444;
+        padding:       10px 21px;
+        color:         #00ffff;
+        display:       inline-block;
+        font:          normal 400 24px/1 "Zenhei", sans-serif;
+        text-align:    center;
+        text-shadow:   1px 1px #385c7e;
+      }
+
+
+
+      */
+      li {
+        background: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 8px;
+
+
+
+          a {
+            font-size: 1em;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #00A8FF;
+            b {
+              font-family: 'Times New Roman', Times, serif;
+              color: lightgreen;
+          }
+        }
+
+        p {
+          color: rgb(0, 117, 126);
+          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+        }
+
+        ul {
+          margin-top: 20px;
+
+          li {
+            padding: 0;
+
+            a {
+              font-size: 1em;
+              text-decoration: none;
+              font-weight: bold;
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              color: #00A8FF;
+              b {
+                font-family: 'Times New Roman', Times, serif;
+                color: lightgreen;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

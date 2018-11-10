@@ -1,0 +1,33 @@
+
+<div style="..." >
+<nav>
+  <a routerLink="add"  role="button" routerLinkActive="active" >Add</a>
+  <a routerLink="list" role="button"  routerLinkActive="active">List</a>
+</nav>
+
+
+<router-outlet></router-outlet>
+</div>
+
+<!--
+
+
+
+<ul *ngFor="let users of users$; let user_index = index">
+<li>
+    <b *ngFor="let post of posts$; let px = index">
+      <b *ngIf="post.userId === users.id ">
+        <a *ngIf='(px) % 10 === 0' style='font-size: xx-large;'> Author : <b>{{users.name}}</b></a>
+        <br>
+<a *ngIf='(px) % 10 === 0' style='font-size: x-large;'> UserName : <b>{{users.username}}</b></a>
+        <br>
+        <a> Title : </a> {{ post.title  }}
+     <br>
+        <p><a>Content : </a>  {{ post.body | uppercase }}</p>
+      </b>
+    </b>
+  </li>
+</ul>
+
+
+-->

@@ -1,0 +1,27 @@
+<h1>Comments</h1>
+
+<ul *ngFor='let post of posts$; let px = index'>
+ <li>      
+    <b  *ngFor = ' let comment of comments$ ; let cx =index'>
+    
+  
+    
+      <b *ngIf = 'post.id === comment.postId '>
+    
+           <a *ngIf='(cx ) % 5 === 0 '  style="font-size :x-large ; font-style: italic">Post Id:<b>{{comment.postId}}</b></a>
+        <br>
+        <a> Comment Id: </a> {{ comment.id}}
+        <br>
+
+        <a>Name :</a> {{comment.name}}
+        <br>
+        <a> Email:</a> {{ comment.email}}
+        <br>
+        <p> {{ comment.body | uppercase}}</p>
+       
+ </b>
+
+     
+    </b>
+</li>
+</ul>

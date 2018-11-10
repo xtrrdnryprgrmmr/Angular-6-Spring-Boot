@@ -1,0 +1,20 @@
+<nav>
+  <ul>
+    <li>
+      <a routerLink="users" title="USER"  [class.activated]="currentUrl == '/users'">
+        <i class="material-icons">supervised_user_circle</i>
+      </a>
+    </li>
+    <li>
+        <a routerLink="posts" title="POSTS" [class.activated]="currentUrl == '/posts'">
+          <i class="material-icons">message</i>
+        </a>
+      </li>
+      <li>
+        <a routerLink ="comments" title="COMMENTS" [class.activated]="currentUrl == '/comments'">
+        <i class="material-icons">comment</i>
+        </a>
+      </li>
+
+ </ul>
+</nav>

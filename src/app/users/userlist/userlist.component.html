@@ -1,0 +1,20 @@
+<h1>Users</h1>
+
+<ul *ngFor="let user of users | async">
+<app-userdetail   [user] ='user'></app-userdetail>
+</ul>
+
+
+
+<!--
+<div *ngFor="let user of users  | async"   >
+  <li><strong>User Id:</strong>{{user.id}}</li>
+  <li><strong>Username:</strong>{{user.name}}</li>
+  <li><strong>Email:</strong>{{user.email}}</li>
+  <li><strong>Phone:</strong>{{user.phone}}</li>
+  <li><strong>WebSite:</strong>{{user.website}}</li>
+  <li><strong>Address:</strong>{{user.address}}</li>
+</div>
+
+-->
+

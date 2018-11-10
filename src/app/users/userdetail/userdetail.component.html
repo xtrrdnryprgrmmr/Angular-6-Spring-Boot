@@ -1,0 +1,35 @@
+
+<ul *ngIf="user">
+
+  <li>
+
+    <a>User Id : <b>{{user.id}}</b></a>
+    <br>
+    <a>User Name : <b>{{user.name}}</b></a>
+    <br>
+    <a>User Email : <b>{{user.email}}</b></a>
+    <br>
+    <a>User Address :
+      <b *ngIf="user.address !== null">
+        <br>
+        <a>Street : </a>{{user.address.street}}
+        <br>
+        <a>Suite :</a> {{user.address.suite}}
+        <br>
+        <a>City : </a>{{user.address.city}}
+        <br>
+        <a>Zipcode : </a> {{user.address.zipcode}} </b>
+
+      <b *ngIf="user.address === null">Weak information!! </b>
+    </a>
+    <br>
+    <a>User Phone : <b>{{user.phone}}</b></a>
+    <br>
+    <a>User Website : <b> {{user.website}}</b></a>
+    <br>
+    <button class="btn btn-danger"  (click)="deleteUsers()">delete</button>
+  </li>
+
+
+
+</ul>
