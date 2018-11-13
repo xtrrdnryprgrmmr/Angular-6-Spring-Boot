@@ -1,0 +1,13 @@
+com\example\demo\service\UserService.class
+com\example\demo\api\PostController.class
+com\example\demo\model\Address.class
+com\example\demo\model\Posts.class
+com\example\demo\repo\AddressRepository.class
+com\example\demo\DemobootApplication.class
+com\example\demo\model\Geo.class
+com\example\demo\repo\UserRepository.class
+com\example\demo\model\Company.class
+com\example\demo\repo\PostRepository.class
+com\example\demo\model\Comments.class
+com\example\demo\api\UserController.class
+com\example\demo\model\Users.class
