@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import {CommonModule} from '@angular/common';
+
+
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { PostsComponent } from './posts/posts.component';
@@ -18,6 +21,9 @@ import { UserdetailComponent } from './users/userdetail/userdetail.component';
 
 import { PostcreateComponent } from './posts/postcreate/postcreate.component';
 import { PostlistComponent } from './posts/postlist/postlist.component';
+import { PostdetailComponent } from './posts/postdetail/postdetail.component';
+import { MyPipePipe } from './posts/postcreate/my-pipe.pipe';
+import { ApiService } from './api.service';
 
 @NgModule({
    declarations: [
@@ -30,8 +36,10 @@ import { PostlistComponent } from './posts/postlist/postlist.component';
       UserscreateComponent,
       UserlistComponent,
       UserdetailComponent,
-          PostcreateComponent,
-          PostlistComponent,
+     PostcreateComponent,
+     PostlistComponent,
+     PostdetailComponent,
+     MyPipePipe
 
    ],
    imports: [
@@ -41,11 +49,11 @@ import { PostlistComponent } from './posts/postlist/postlist.component';
       HttpClientModule,
      FormsModule ,
      ReactiveFormsModule,
+     CommonModule,
    ],
    providers: [],
    bootstrap: [
       AppComponent
    ]
 })
-
 export class AppModule { }

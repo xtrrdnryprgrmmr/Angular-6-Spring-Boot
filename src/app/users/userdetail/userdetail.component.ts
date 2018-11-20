@@ -31,6 +31,16 @@ export class UserdetailComponent implements OnInit {
         error => console.log(error));
   }
 
+updateUsers() {
 
+
+    this.apiService.updateUser(this.user.id , {name: this.user.name, email: this.user.email}).subscribe(
+      data => {
+        console.log(data);
+        this.user = data as User;
+      },
+      error => console.log(error)
+    );
+}
 
 }

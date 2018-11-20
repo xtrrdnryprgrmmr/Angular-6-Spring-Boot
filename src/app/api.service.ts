@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {Observable, throwError} from 'rxjs';
+import {catchError} from 'rxjs/operators';
+import {User} from './user';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +15,8 @@ export class ApiService {
 
 
   createUser(users: Object ): Observable<Object> {
-    return this.http.post(  this.GET_USERS + '/create', users);
+    return this.http.post(  this.GET_USERS + '/create', users)
+      .pipe(catchError(this.errorhandler));
   }
   getUserList(): Observable<any> {
     return this.http.get( this.GET_USERS + '/list');
@@ -32,14 +35,23 @@ export class ApiService {
   }
   createPost(posts: Object): Observable<Object> {
     return this.http.post(this.GET_POSTS + '/create' , posts);
+ }
+
+  errorhandler(error: HttpErrorResponse) {
+    return throwError(error);
   }
   getPostById(id: number): Observable<any> {
-    return this.http.get(this.GET_POSTS + '/list/' + id);
+    return this.http.get(this.GET_POSTS + '/list/id/' + id);
   }
   deletePosts(id: number): Observable<any> {
-    return this.http.delete(this.GET_POSTS + '/list'  + id , { responseType : 'text'});
+    return this.http.delete(this.GET_POSTS + '/list/'  + id , { responseType : 'text'});
   }
+updateUser(id: number, value: any): Observable<Object> {
+  return this.http.put(this.GET_USERS + '/list/id/' + id , value);
+}
+updatePost(id: number , value: any): Observable<Object> {
 
-
+    return this.http.put(this.GET_USERS + '/list/id/' + id , value);
+}
 
 }

@@ -5,7 +5,7 @@ import {Observable} from 'rxjs';
 import {FormControl, FormGroup} from '@angular/forms';
 import {User} from '../../user';
 import {ApiService} from '../../api.service';
-
+import {UsersComponent} from '../users.component';
 
 @Component({
   selector: 'app-userscreate',
@@ -13,13 +13,13 @@ import {ApiService} from '../../api.service';
   styleUrls: ['./userscreate.component.scss']
 })
 export class UserscreateComponent implements OnInit {
-  /*
 
+/*
 userForm = new FormGroup(
 
 
 {
-  id : new FormControl(''),
+  id : new FormControl('id'),
   name: new FormControl(''),
   email: new FormControl(''),
   address: new FormGroup(
@@ -34,14 +34,16 @@ userForm = new FormGroup(
   website: new FormControl('')
 }
 );
+
 */
+
 
    users: User = new User ();
  // users: User = { id : 0, name: '', email : '' , address: {street : '', suite: '' , city: '' , zipcode: '' }, phone: '', website: ''};
 submitted = false;
 
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService ) { }
 
   ngOnInit() {
 
@@ -60,4 +62,5 @@ submitted = false;
     this.submitted = true;
     this.save();
 }
+
 }

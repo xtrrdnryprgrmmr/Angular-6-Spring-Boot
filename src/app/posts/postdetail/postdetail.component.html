@@ -1,0 +1,19 @@
+<ul *ngIf="post">
+  <li>
+
+    <a>User Id : <b>{{post.userId}}</b></a>
+    <br>
+    <a>Post Id : <b>{{post.id}}</b></a>
+    <br>
+    <a>Title : <b>{{post.title}}</b></a>
+    <br>
+    <a>Body : <b>{{post.body}}</b></a>
+    <br>
+
+
+    <button class="btn btn-danger" (click)="deletePost()">Delete</button>
+  </li>
+
+
+
+</ul>

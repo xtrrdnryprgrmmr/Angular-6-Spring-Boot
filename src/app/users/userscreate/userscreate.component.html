@@ -1,18 +1,25 @@
-<div  [hidden]="submitted" style="...">
+<div  [hidden]="submitted" style=" ">
 
-  <form (ngSubmit)="onSubmit()" >
+  <form   (ngSubmit)="onSubmit()" >
     <div class="form-group">
       <label for="id">User Id</label>
       <input type="text"   class="form-control"  id="id"   required [(ngModel)]="users.id" name="id">
-
     </div>
     <div class="form-group">
       <label for="name">Name</label>
-      <input type="text"  class="form-control"  id="name"  required [(ngModel)]="users.name" name="name">
+      <input type="text"  class="form-control"  id="name"  required [(ngModel)]="users.name"   [class.is-invalid]="name.invalid && name.touched"  #name="ngModel" name="name">
+      <div [hidden]="name.valid || name.pristine" *ngIf="name.errors &&(name.invalid || name.untouched)" >
+        <small class="text text-danger" *ngIf="name?.errors.required">Name is required </small>
+      </div>
     </div>
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="email"  class="form-control"  id="email" required [(ngModel)]="users.email"  name="email">
+      <input type="email"  class="form-control"  id="email" required [(ngModel)]="users.email" [class.is-invalid]="email.invalid && email.touched" #email="ngModel" name="email">
+      <div *ngIf=" email.errors && (email.invalid || email.touched)"  class="invalid-feedback">
+        <small class="text text-danger" *ngIf="email?.errors.required">Email is required</small>
+        <small class="text text-danger" *ngIf="email?.errors.email">Email must be a valid email address</small>
+      </div>
+
     </div>
 
     <div class="form-group">
@@ -36,13 +43,22 @@
 
     <div class="form-group">
       <label for="phone">Phone</label>
-      <input type="tel"   class="form-control" id="phone" required [(ngModel)]="users.phone"  name="phone">
+      <input type="tel" #phone="ngModel"  class="form-control"    pattern="^\d{10}$" id="phone" required [(ngModel)]="users.phone" [class.is-invalid]="phone.invalid && phone.touched"    name="phone">
+      <div  [hidden]="phone.valid || phone.pristine" *ngIf="phone.errors && (phone.invalid || phone.touched)">
+        <small class="text-danger"  *ngIf="phone?.errors.required">Phone number is required</small>
+        <small class="text-danger" *ngIf="phone?.errors.pattern">Phone number must be 10 digits</small>
 
+      </div>
     </div>
     <div class="form-group">
       <label for="website">Website</label>
-      <input type="url"  class="form-control" id="website" required [(ngModel)]="users.website"  name="website">
-
+      <input type="url"  class="form-control" id="website"  required [(ngModel)]="users.website" [class.is-invalid]="website.invalid && website.touched"  #website ="ngModel" name="website">
+<div [hidden]="website.valid " *ngIf="website.errors && (website.invalid || website.touched)">
+<!--
+<small class="text-danger" *ngIf="website?.errors.required">is required</small>
+  <small class="text-danger" *ngIf="website?.errors.pattern">its not suitable</small>
+  -->
+</div>
     </div>
 
     <button class="btn btn-success" type="submit">Submit</button>

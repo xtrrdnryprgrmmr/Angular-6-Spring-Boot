@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
 import { User } from '../user';
+import {ApiService} from '../api.service';
 
 @Component({
   selector: 'app-users',
@@ -38,16 +39,28 @@ import { User } from '../user';
 export class UsersComponent implements OnInit {
 
 
-
-
-  constructor() { }
+ /// users: User = new User ();
+//  submitted = false;
+  constructor(private apiservice: ApiService) { }
 
   ngOnInit() {
 
   }
-
-
-
+/*
+  newUser(): void {
+    this.submitted = false;
+    this.users = new User();
+  }
+  save() {
+    this.apiservice.createUser(this.users)
+      .subscribe( data => console.log(data)  ,  error => console.log(error));
+    this.users = new User();
+  }
+  onSubmit() {
+    this.submitted = true;
+    this.save();
+  }
+*/
 }
 /*users$: Object;
   constructor(private data:  DataService) { }

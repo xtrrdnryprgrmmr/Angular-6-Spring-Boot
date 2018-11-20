@@ -1,21 +1,35 @@
-<div [hidden]="submitted"  style="...">
-  <form (ngSubmit)="onSubmit()" >
+<div [hidden]="submitted " style=" ">
+  <form  (ngSubmit)=" onSubmit()" >
+    <!--   <div class="alert alert-danger"  *ngIf="errormessage">
+   {{ errormessage}}
+       </div>
+       -->
     <div class="form-group">
+      <label for="userId">User Id</label>
+      <input type="number" class="form-control" id="userId" name="userId" required [(ngModel)]="posts.userId">
+      <!--<div   class="tetx text-danger" *ngIf="!isEqual" >Invalid Id!!!</div>-->
+    
+     <div *ngIf=" (posts.userId | myPipe) ">invalid </div> 
+  <!--<div *ngIf="!isEqual" >invaliddd</div>-->  
+  
+  </div>
+  <div class="form-group">
       <label for="id">Post Id</label>
-      <input type="text" class="form-control"  id="id" required [(ngModel)]="posts.id" name="id">
+      <input type="text" class="form-control" name="id" required [(ngModel)]="posts.id" >
     </div>
     <div class="form-group">
       <label for="title">title</label>
-      <input type="text" class="form-control" id="title" required [(ngModel)]="posts.title" name="title">
+      <input type="text" class="form-control" name="title" required [(ngModel)]="posts.title" >
     </div>
+
     <div class="form-group">
       <label for="body">body</label>
-      <input type="text" class="form-control" id="body" required [(ngModel)]="posts.body" name="body">
+      <input type="text" class="form-control" name="body" required [(ngModel)]="posts.body" >
     </div>
     <button class="btn btn-success" type="submit">Post Submit</button>
   </form>
 </div>
-<div [hidden]="!submitted" style="...">
+<div [hidden]="!submitted" style=" ">
   <h1>created succesfully</h1>
   <button class="btn btn-success" (click)="newPost()">If you wish ,add Post again</button>
 </div>
