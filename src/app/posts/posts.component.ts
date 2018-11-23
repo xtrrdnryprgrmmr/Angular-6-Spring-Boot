@@ -11,10 +11,13 @@ import {Post} from '../post';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
-  comments$: Object;
-  posts$: Object;
-  users$: Object;
+ // comments$: Object;
+ // posts$: Object;
+ // users$: Object;
 //  @Input() post: Post;
+
+
+
   constructor( private apiService: ApiService    )   {
 }
 

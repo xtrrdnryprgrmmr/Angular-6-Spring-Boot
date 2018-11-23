@@ -30,7 +30,8 @@
               "../demoang/node_modules/bootstrap/scss/bootstrap.scss",
               "src/styles.scss"
             ],
-            "scripts": ["../demoang/node_modules/jquery/dist/jquery.min.js","../demoang/node_modules/bootstrap/dist/js/bootstrap.min.js"]
+            "scripts": ["../demoang/node_modules/jquery/dist/jquery.min.js",
+              "../demoang/node_modules/bootstrap/dist/js/bootstrap.min.js"]
           },
           "configurations": {
             "production": {

@@ -1,12 +1,8 @@
 import {User} from './user';
 
 export class Post {
-
-
-  userId: number;
+userId: number;
   id: number;
   title: string;
   body: string;
-
-
 }

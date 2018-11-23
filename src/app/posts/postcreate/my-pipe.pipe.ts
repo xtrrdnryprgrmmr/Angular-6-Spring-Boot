@@ -25,9 +25,9 @@ export class MyPipePipe implements PipeTransform {
         console.log('invaliddd!!!not equal');
         return this.isEqual = false;
 
-      } else  if (userId === null ) {
-console.log('nulll');
-return  this.isEqual = false;
+      } else if (userId === null) {
+        console.log('nulll');
+        return this.isEqual = false;
       }
     }
     ));

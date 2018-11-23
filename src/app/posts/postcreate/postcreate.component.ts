@@ -11,6 +11,7 @@ import { map, catchError, switchMap } from 'rxjs/operators';
 import { error } from 'util';
 import { isNgTemplate } from '@angular/compiler';
 import { PostsComponent } from '../posts.component';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-postcreate',
@@ -25,15 +26,22 @@ export class PostcreateComponent implements OnInit {
   submitted = false;
   isEqual = false;
   errormessage = 'error has happened!!!';
-
-  constructor(private apiService: ApiService) { }
+ contactPost: FormGroup;
+  constructor(private apiService: ApiService  , private fb: FormBuilder) {
+}
 
   ngOnInit() {
-// this.users_s = this.apiService.getUserList();
-  }
+  // this.users_s = this.apiService.getUserList();
+    this.contactPost =  this.fb.group({
+      userId : ['' , Validators.required],
+      id : ['', Validators.required],
+      title: ['', Validators.required],
+     body: ['', Validators.required]
+    });
 
+  }
   newPost(): void {
-this.isEqual = false;
+    // this.isEqual = false;
     this.submitted = false;
     this.posts = new Post();
 
@@ -44,22 +52,40 @@ this.isEqual = false;
 
       // tslint:disable-next-line:no-shadowed-variable
       .subscribe(data => (console.log(data)), error => console.log(error));
-this.finduid(this.posts.userId);
+this.apiService.getUserIdfromUsers(this.posts.userId); // I tried like this
+
     this.posts = new Post();
 
   }
 
   onSubmit() {
-this.isEqual = true;
+
     this.submitted = true;
     this.save();
 
   }
 
+ /* createFormGroup() {
+  this.fb.group({
+    userId : ['', Validators.required],
+    id : ['', Validators.required],
+    title: ['', Validators.required],
+   body: ['', Validators.required]
+  });*/
+   /* return new FormGroup({
+      userId: new FormControl('', [Validators.required]),
+      id: new FormControl('', [Validators.required]),
+      title: new FormControl('', [Validators.required]),
+      body: new FormControl('', [Validators.required])
+
+    });*/
+  }
+/*get userId(){
+return this.contactPost.get('userId');
+}*/
 
 
-
- finduid(pid: number) {
+ /*finduid(pid: number) {
     this.users_s = this.apiService.getUserList();
     this.users_s.subscribe(res => res.filter(key => {
       if (key.id === pid && pid !== null) {
@@ -72,7 +98,7 @@ this.isEqual = true;
 
     }));
 
-  }
+  }*/
 
 
 
